@@ -5,5 +5,3 @@
 
 ![ESLint](https://github.com/Californium251/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)
 
-![example workflow](https://github.com/Californium251/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)
-
