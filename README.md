@@ -5,3 +5,4 @@
 
 ![ESLint](https://github.com/Californium251/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)
 
+[Аскинема brain-even](https://asciinema.org/connect/eee87028-2e02-44ef-8e58-dd3047c9a5ab)
