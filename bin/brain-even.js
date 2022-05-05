@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import userName from '../src/cli.js';
-import newNum from './new-num.js';
-import * as show from './answer.js';
+import * as get from './get.js';
+import * as answer from './answer.js';
 import ask from './ask.js';
 
 const brainEven = () => {
@@ -10,19 +10,19 @@ const brainEven = () => {
     return num % 2 === 0 ? 'yes' : 'no';
   }
 
-  show.weclomeMessage(userName);
+  answer.weclomeMessage(userName);
 
   for (let i = 0; i <= 2; i += 1) {
-    const num = newNum();
+    const num = get.num();
     const correctAnswer = findCorrectAnswer(num);
-    const answer = ask(num);
-    if (answer !== correctAnswer) {
-      show.gameOver(answer, correctAnswer, userName);
+    const userAnswer = ask(num);
+    if (userAnswer !== correctAnswer) {
+      answer.gameOver(userAnswer, correctAnswer, userName);
       return;
     }
-    show.correctAnswer();
+    answer.correctAnswer();
   }
-  show.congratulations(userName);
+  answer.congratulations(userName);
 };
 
 brainEven();
