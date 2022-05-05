@@ -9,7 +9,9 @@ const gameOver = (actual, correct, name) => {
   console.log(`Let's try again, ${name}!`);
 };
 
-const findCorrectAnswer = (num) => num % 2 === 0 ? 'yes' : 'no';
+function findCorrectAnswer(num) {
+  return num % 2 === 0 ? 'yes' : 'no';
+}
 
 const getName = () => readlineSync.question('May I have your name? ');
 
@@ -28,7 +30,6 @@ const ask = () => {
     console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
-  return;
 };
 
 console.log(ask());
