@@ -11,4 +11,4 @@
 
 [Аскинема brain-gcd](https://asciinema.org/a/95h7S17pPud4iuEGhQjbsIgVY)
 
-[[Аскинема brain-progression](https://asciinema.org/a/SMK8jWOtZoh46I9DQgrgEybzV)
+[Аскинема brain-progression](https://asciinema.org/a/SMK8jWOtZoh46I9DQgrgEybzV)
