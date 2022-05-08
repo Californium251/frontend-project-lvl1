@@ -1,5 +1,8 @@
-export const weclomeMessage = (name) => {
+import constants from './constants.js';
+
+export const weclomeMessage = (name, gameName) => {
   console.log(`Hello, ${name}!`);
+  console.log(constants[gameName]);
 };
 
 export const correctAnswer = () => {

@@ -9,8 +9,9 @@ const brainEven = () => {
   function findCorrectAnswer(num) {
     return num % 2 === 0 ? 'yes' : 'no';
   }
+  const gameName = 'brainEven';
 
-  answer.weclomeMessage(userName);
+  answer.weclomeMessage(userName, gameName);
 
   for (let i = 0; i <= 2; i += 1) {
     const num = get.num();

@@ -18,8 +18,9 @@ const brainCalc = () => {
     }
     return NaN;
   }
+  const gameName = 'brainCalc';
 
-  answer.weclomeMessage(userName);
+  answer.weclomeMessage(userName, gameName);
 
   for (let i = 0; i <= 2; i += 1) {
     const operation = get.operation();
