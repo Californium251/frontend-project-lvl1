@@ -12,3 +12,5 @@
 [Аскинема brain-gcd](https://asciinema.org/a/95h7S17pPud4iuEGhQjbsIgVY)
 
 [Аскинема brain-progression](https://asciinema.org/a/SMK8jWOtZoh46I9DQgrgEybzV)
+
+[Аскинема brain-prime](https://asciinema.org/a/bTfKprrh0JCaRqhnzURC3A3XC)
