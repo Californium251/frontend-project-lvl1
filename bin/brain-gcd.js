@@ -1,21 +1,22 @@
 #!/usr/bin/env node
 
 import userName from '../src/cli.js';
-import * as get from './get.js';
 import * as answer from './answer.js';
-import ask from './ask.js';
+import * as get from './get.js';
 import findCorrectAnswer from './findCorrectAnswer.js';
+import ask from './ask.js';
 
-const brainEven = () => {
-  const gameName = 'brainEven';
-
+const brainGcd = () => {
+  const gameName = 'brainGcd';
   answer.weclomeMessage(userName, gameName);
-
   for (let i = 0; i <= 2; i += 1) {
-    const num = get.num();
-    const correctAnswer = findCorrectAnswer[gameName](num);
-    const userAnswer = ask(num);
-    if (userAnswer !== correctAnswer) {
+    const firstNum = get.num();
+    const secondNum = get.num();
+    const correctAnswer = findCorrectAnswer[gameName](firstNum, secondNum);
+
+    const userAnswer = ask(`${firstNum} ${secondNum}`);
+
+    if (+userAnswer !== correctAnswer) {
       answer.gameOver(userAnswer, correctAnswer, userName);
       return;
     }
@@ -24,4 +25,4 @@ const brainEven = () => {
   answer.congratulations(userName);
 };
 
-brainEven();
+brainGcd();

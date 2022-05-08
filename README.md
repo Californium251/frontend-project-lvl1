@@ -8,3 +8,5 @@
 [Аскинема brain-even](https://asciinema.org/connect/eee87028-2e02-44ef-8e58-dd3047c9a5ab)
 
 [Аскинема brain-calc](https://asciinema.org/a/uaqRLR3MDH02xouoxJS3WBfgd)
+
+[Аскинема brain-gcd](https://asciinema.org/a/95h7S17pPud4iuEGhQjbsIgVY)
