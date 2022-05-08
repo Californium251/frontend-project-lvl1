@@ -1,8 +1,8 @@
 const findCorrectAnswer = {
-  brainEven: function findCorrectAnswer(num) {
+  brainEven(num) {
     return num % 2 === 0 ? 'yes' : 'no';
   },
-  brainCalc: function findCorrectAnswer(n1, n2, op) {
+  brainCalc(n1, n2, op) {
     if (op === '+') {
       return n1 + n2;
     }
@@ -22,6 +22,9 @@ const findCorrectAnswer = {
       return min;
     }
     return this.brainGcd(min, modulo);
+  },
+  brainProgression(progression) {
+    return progression.missedEl;
   },
 };
 
