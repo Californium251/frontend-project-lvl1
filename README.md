@@ -1,10 +1,33 @@
-### Hexlet tests and linter status:
+# Учебный проект ”Brain Games“ в школе программирования Hexlet
+
+Проект представляет собой 5 игр в консоли:
+1. Чётное число.
+2. Калькулятор.
+3. Наибольший общий делитель.
+4. Арифметическая прогрессия.
+5. Простое число.
+Каждая игра просит пользователя угадать число. После трёх правильных ответов пользователь выигрывает. В случае ошибки — проигрывает.
+
+## Инструкция по установке
+
+```sh
+make install
+npm link
+make publish
+```
+
+[Аскинема установки и запуска](https://asciinema.org/a/7nE2JWhhTMYiLWvcFZJRjLBUa)
+
+### Hexlet tests and linter status
 [![Actions Status](https://github.com/Californium251/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Californium251/frontend-project-lvl1/actions)
 
+### Codeclimate Maintainability test
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
+### ESLint status
 ![ESLint](https://github.com/Californium251/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)
 
+### Аскинемы каждой игры
 [Аскинема brain-even](https://asciinema.org/connect/eee87028-2e02-44ef-8e58-dd3047c9a5ab)
 
 [Аскинема brain-calc](https://asciinema.org/a/uaqRLR3MDH02xouoxJS3WBfgd)

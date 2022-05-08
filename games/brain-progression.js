@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import userName from '../src/cli.js';
-import * as answer from './answer.js';
-import * as get from './get.js';
-import findCorrectAnswer from './findCorrectAnswer.js';
-import ask from './ask.js';
+import * as answer from '../bin/answer.js';
+import * as get from '../bin/get.js';
+import findCorrectAnswer from '../bin/findCorrectAnswer.js';
+import ask from '../bin/ask.js';
 
 const brainProgression = () => {
   const gameName = 'brainProgression';
