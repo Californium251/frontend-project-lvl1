@@ -21,10 +21,10 @@ make install
 [![Actions Status](https://github.com/Californium251/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Californium251/frontend-project-lvl1/actions)
 
 ### Codeclimate Maintainability test
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/be07ab9bee0ea93749be/maintainability)](https://codeclimate.com/github/Californium251/frontend-project-lvl1/maintainability)
 
 ### ESLint status
-![ESLint](https://github.com/Californium251/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)
+![ESLint](https://github.com/Californium251/frontend-project-lvl1/actions/workflows/github-actions.yml)
 
 ### Аскинемы каждой игры
 [Аскинема brain-even](https://asciinema.org/connect/eee87028-2e02-44ef-8e58-dd3047c9a5ab)
