@@ -4,13 +4,10 @@ const isEven = (num) => num % 2 === 0;
 
 export const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const getQuestion = () => {
+export const getQuestionAndAnswer = () => {
   const num = generateNumber();
-
   return {
-    nums: num,
-    str: num,
+    question: num.toString(),
+    correctAnswer: isEven(num) ? 'yes' : 'no',
   };
 };
-
-export const findCorrectAnswer = (num) => (isEven(num) ? 'yes' : 'no');

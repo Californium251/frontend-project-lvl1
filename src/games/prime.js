@@ -11,13 +11,11 @@ const isPrime = (num) => {
 
 export const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const getQuestion = () => {
+export const getQuestionAndAnswer = () => {
   const num = generateNumber(2);
 
   return {
-    nums: num,
-    str: num,
+    question: num,
+    correctAnswer: isPrime(num) ? 'yes' : 'no',
   };
 };
-
-export const findCorrectAnswer = (num) => (isPrime(num) ? 'yes' : 'no');

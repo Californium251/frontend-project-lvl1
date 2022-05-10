@@ -1,35 +1,29 @@
 import generateNumber from '../utils.js';
 
-const getOperation = () => ['+', '-', '*'][generateNumber(0, 2)];
+const getOperation = () => {
+  const operations = ['+', '-', '*'];
+  return operations[generateNumber(0, operations.length - 1)];
+};
 
 export const condition = 'What is the result of the expression?';
 
-export const getQuestion = () => {
+export const getQuestionAndAnswer = () => {
   const firstNum = generateNumber();
   const secondNum = generateNumber();
   const operation = getOperation();
+  const questionAndAnswer = {};
 
-  return {
-    nums: {
-      firstNum,
-      secondNum,
-      operation,
-    },
-    str: `${firstNum} ${operation} ${secondNum}`,
-  };
+  questionAndAnswer.question = `${firstNum} ${operation} ${secondNum}`;
+
+  if (operation === '+') {
+    questionAndAnswer.correctAnswer = (firstNum + secondNum).toString();
+  }
+  if (operation === '-') {
+    questionAndAnswer.correctAnswer = (firstNum - secondNum).toString();
+  }
+  if (operation === '*') {
+    questionAndAnswer.correctAnswer = (firstNum * secondNum).toString();
+  }
+
+  return questionAndAnswer;
 };
-
-const makeCalculation = (expression) => {
-  if (expression.operation === '+') {
-    return expression.firstNum + expression.secondNum;
-  }
-  if (expression.operation === '-') {
-    return expression.firstNum - expression.secondNum;
-  }
-  if (expression.operation === '*') {
-    return expression.firstNum * expression.secondNum;
-  }
-  return NaN;
-};
-
-export const findCorrectAnswer = (num) => makeCalculation(num).toString();

@@ -1,34 +1,25 @@
 import readlineSync from 'readline-sync';
-import cli from './cli.js';
 
-const showCorrectMessage = () => {
-  console.log('Correct!');
-};
+const startGame = (condition, getQuestionAndAnswer) => {
+  const userName = readlineSync.question('May I have your name? ');
+  const roundsCount = 3;
 
-const showGameOver = (actual, correct, name) => {
-  console.log(`'${actual}' is wrong answer ;(. Correct answer was '${correct}'.`);
-  console.log(`Let's try again, ${name}!`);
-};
+  console.log(`Hello, ${userName}!`);
+  console.log(condition);
 
-const showCongratulations = (name) => {
-  console.log(`Congratulations, ${name}!`);
-};
-
-const ask = (num) => readlineSync.question(`Question: ${num} `);
-
-const startGame = (condition, getQuestion, findCorrectAnswer) => {
-  const userName = cli(condition);
-  for (let i = 0; i <= 2; i += 1) {
-    const question = getQuestion();
-    const userAnswer = ask(question.str);
-    const correctAnswer = findCorrectAnswer(question.nums);
+  for (let i = 1; i <= roundsCount; i += 1) {
+    const { question, correctAnswer } = getQuestionAndAnswer();
+    const userAnswer = readlineSync.question(`Question: ${question} `);
     if (userAnswer !== correctAnswer) {
-      showGameOver(userAnswer, correctAnswer, userName);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
-    showCorrectMessage();
+
+    console.log('Correct!');
   }
-  showCongratulations(userName);
+
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default startGame;

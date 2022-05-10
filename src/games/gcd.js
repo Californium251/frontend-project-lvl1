@@ -12,17 +12,12 @@ const findGcd = (n1, n2) => {
 
 export const condition = 'Find the greatest common divisor of given numbers.';
 
-export const getQuestion = () => {
+export const getQuestionAndAnswer = () => {
   const firstNum = generateNumber(1, 100);
   const secondNum = generateNumber(1, 100);
 
   return {
-    nums: {
-      firstNum,
-      secondNum,
-    },
-    str: `${firstNum} ${secondNum}`,
+    question: `${firstNum} ${secondNum}`,
+    correctAnswer: findGcd(firstNum, secondNum).toString(),
   };
 };
-
-export const findCorrectAnswer = (nums) => findGcd(nums.firstNum, nums.secondNum).toString();
