@@ -12,7 +12,7 @@ const isPrime = (num) => {
 export const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export const getQuestion = () => {
-  const num = generateNumber();
+  const num = generateNumber(2);
 
   return {
     nums: num,
