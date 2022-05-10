@@ -1,21 +1,23 @@
-import userName from '../cli.js';
-import * as logic from '../index.js';
+import generateNumber from '../utils.js';
 
-const brainPrime = () => {
-  const gameName = 'brainPrime';
-  logic.say.welcomeMessage(userName, gameName);
-
-  for (let i = 0; i <= 2; i += 1) {
-    const num = logic.generate.num();
-    const userAnswer = logic.say.ask(num);
-    const correctAnswer = logic.findCorrectAnswer[gameName](num);
-    if (userAnswer !== correctAnswer) {
-      logic.say.gameOver(userAnswer, correctAnswer, userName);
-      return;
+const isPrime = (num) => {
+  for (let i = 2; i <= num / 2; i += 1) {
+    if (num % i === 0) {
+      return false;
     }
-    logic.say.correctAnswer();
   }
-  logic.say.congratulations(userName);
+  return true;
 };
 
-export default brainPrime;
+export const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+export const getQuestion = () => {
+  const num = generateNumber();
+
+  return {
+    nums: num,
+    str: num,
+  };
+};
+
+export const findCorrectAnswer = (num) => (isPrime(num) ? 'yes' : 'no');

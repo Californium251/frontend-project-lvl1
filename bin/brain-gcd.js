@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import brainGcd from '../src/games/gcd.js';
+import { condition, getQuestion, findCorrectAnswer } from '../src/games/gcd.js';
+import startGame from '../src/index.js';
 
-brainGcd();
+startGame(condition, getQuestion, findCorrectAnswer);

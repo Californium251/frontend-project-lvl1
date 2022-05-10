@@ -1,23 +1,35 @@
-import userName from '../cli.js';
-import * as logic from '../index.js';
+import generateNumber from '../utils.js';
 
-const brainCalc = () => {
-  const gameName = 'brainCalc';
-  logic.say.welcomeMessage(userName, gameName);
+const getOperation = () => ['+', '-', '*'][generateNumber(0, 2)];
 
-  for (let i = 0; i <= 2; i += 1) {
-    const operation = logic.generate.operation();
-    const firstNum = logic.generate.num();
-    const secondNum = logic.generate.num();
-    const userAnswer = logic.say.ask(`${firstNum} ${operation} ${secondNum}`);
-    const correctAnswer = logic.findCorrectAnswer[gameName](firstNum, secondNum, operation);
-    if (+userAnswer !== correctAnswer) {
-      logic.say.gameOver(userAnswer, correctAnswer, userName);
-      return;
-    }
-    logic.say.correctAnswer();
-  }
-  logic.say.congratulations(userName);
+export const condition = 'What is the result of the expression?';
+
+export const getQuestion = () => {
+  const firstNum = generateNumber();
+  const secondNum = generateNumber();
+  const operation = getOperation();
+
+  return {
+    nums: {
+      firstNum,
+      secondNum,
+      operation,
+    },
+    str: `${firstNum} ${operation} ${secondNum}`,
+  };
 };
 
-export default brainCalc;
+const makeCalculation = (expression) => {
+  if (expression.operation === '+') {
+    return expression.firstNum + expression.secondNum;
+  }
+  if (expression.operation === '-') {
+    return expression.firstNum - expression.secondNum;
+  }
+  if (expression.operation === '*') {
+    return expression.firstNum * expression.secondNum;
+  }
+  return NaN;
+};
+
+export const findCorrectAnswer = (num) => makeCalculation(num).toString();

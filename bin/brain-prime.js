@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import brainPrime from '../src/games/prime.js';
+import { condition, getQuestion, findCorrectAnswer } from '../src/games/prime.js';
+import startGame from '../src/index.js';
 
-brainPrime();
+startGame(condition, getQuestion, findCorrectAnswer);

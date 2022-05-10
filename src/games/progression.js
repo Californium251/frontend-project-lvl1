@@ -1,21 +1,26 @@
-import userName from '../cli.js';
-import * as logic from '../index.js';
+import generateNumber from '../utils.js';
 
-const brainProgression = () => {
-  const gameName = 'brainProgression';
-  logic.say.welcomeMessage(userName, gameName);
+export const condition = 'What number is missing in the progression?';
 
-  for (let i = 0; i <= 2; i += 1) {
-    const prog = logic.generate.progression(logic.generate.num());
-    const userAnswer = logic.say.ask(prog.subsequence.join(' '));
+export const getQuestion = () => {
+  const length = generateNumber(5, 15);
+  const prog = {
+    nums: {
+      arr: [generateNumber()],
+      missedEl: NaN,
+    },
+    str: '',
+  };
+  const diff = generateNumber();
+  const numOfMissedEl = generateNumber(0, length);
 
-    if (+userAnswer !== logic.findCorrectAnswer[gameName](prog)) {
-      logic.say.gameOver(userAnswer, prog.missedEl, userName);
-      return;
-    }
-    logic.say.correctAnswer();
+  for (let i = 1; i <= length; i += 1) {
+    prog.nums.arr[i] = prog.nums.arr[i - 1] + diff;
   }
-  logic.say.congratulations(userName);
+  prog.nums.missedEl = prog.nums.arr[numOfMissedEl];
+  prog.nums.arr[numOfMissedEl] = '..';
+  prog.str = prog.nums.arr.join(' ');
+  return prog;
 };
 
-export default brainProgression;
+export const findCorrectAnswer = (subsequence) => subsequence.missedEl.toString();

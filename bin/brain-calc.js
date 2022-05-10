@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import brainCalc from '../src/games/calc.js';
+import { condition, getQuestion, findCorrectAnswer } from '../src/games/calc.js';
+import startGame from '../src/index.js';
 
-brainCalc();
+startGame(condition, getQuestion, findCorrectAnswer)

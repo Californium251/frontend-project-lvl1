@@ -1,22 +1,16 @@
-import userName from '../cli.js';
-import * as logic from '../index.js';
+import generateNumber from '../utils.js';
 
-const brainEven = () => {
-  const gameName = 'brainEven';
-  logic.say.welcomeMessage(userName, gameName);
+const isEven = (num) => num % 2 === 0;
 
-  for (let i = 0; i <= 2; i += 1) {
-    const num = logic.generate.num();
-    const correctAnswer = logic.findCorrectAnswer[gameName](num);
-    const userAnswer = logic.say.ask(num);
+export const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-    if (userAnswer !== correctAnswer) {
-      logic.say.gameOver(userAnswer, correctAnswer, userName);
-      return;
-    }
-    logic.say.correctAnswer();
-  }
-  logic.say.congratulations(userName);
+export const getQuestion = () => {
+  const num = generateNumber();
+
+  return {
+    nums: num,
+    str: num,
+  };
 };
 
-export default brainEven;
+export const findCorrectAnswer = (num) => (isEven(num) ? 'yes' : 'no');
