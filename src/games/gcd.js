@@ -1,4 +1,7 @@
 import generateNumber from '../utils.js';
+import startGame from '../index.js';
+
+const condition = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (n1, n2) => {
   const max = Math.max(n1, n2);
@@ -10,9 +13,7 @@ const findGcd = (n1, n2) => {
   return findGcd(min, modulo);
 };
 
-export const condition = 'Find the greatest common divisor of given numbers.';
-
-export const getQuestionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const firstNum = generateNumber(1, 100);
   const secondNum = generateNumber(1, 100);
 
@@ -21,3 +22,9 @@ export const getQuestionAndAnswer = () => {
     correctAnswer: findGcd(firstNum, secondNum).toString(),
   };
 };
+
+const brainGcd = () => {
+  startGame(condition, getQuestionAndAnswer);
+};
+
+export default brainGcd;

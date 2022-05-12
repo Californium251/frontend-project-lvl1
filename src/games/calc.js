@@ -1,29 +1,35 @@
 import generateNumber from '../utils.js';
+import startGame from '../index.js';
 
-const getOperation = () => {
-  const operations = ['+', '-', '*'];
-  return operations[generateNumber(0, operations.length - 1)];
+const makeCalc = (n1, n2, op) => {
+  if (op === '+') {
+    return n1 + n2;
+  }
+  if (op === '-') {
+    return n1 - n2;
+  }
+  if (op === '*') {
+    return n1 * n2;
+  }
+  return NaN;
 };
 
-export const condition = 'What is the result of the expression?';
+const condition = 'What is the result of the expression?';
 
-export const getQuestionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const firstNum = generateNumber();
   const secondNum = generateNumber();
-  const operation = getOperation();
+  const operations = ['+', '-', '*'];
+  const operation = operations[generateNumber(0, operations.length - 1)];
   const questionAndAnswer = {};
-
   questionAndAnswer.question = `${firstNum} ${operation} ${secondNum}`;
-
-  if (operation === '+') {
-    questionAndAnswer.correctAnswer = (firstNum + secondNum).toString();
-  }
-  if (operation === '-') {
-    questionAndAnswer.correctAnswer = (firstNum - secondNum).toString();
-  }
-  if (operation === '*') {
-    questionAndAnswer.correctAnswer = (firstNum * secondNum).toString();
-  }
+  questionAndAnswer.correctAnswer = makeCalc(firstNum, secondNum, operation).toString();
 
   return questionAndAnswer;
 };
+
+const brainCalc = () => {
+  startGame(condition, getQuestionAndAnswer);
+};
+
+export default brainCalc;
